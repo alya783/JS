@@ -2,7 +2,7 @@
   "name": "js",
   "version": "1.0.0",
   "description": "",
-  "main": "HRI.js",
+  "main": "human-readable-date.js",
   "scripts": {
     "lint": "eslint ./"
   },

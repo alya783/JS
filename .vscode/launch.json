@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/HRI.js"
+            "program": "${workspaceFolder}/human-readable-date.js"
         }
     ]
 }
