@@ -3,17 +3,22 @@ const hour = min * 60; // 3600
 const day = hour * 24; // 86400
 const year = day * 365; // 31536000
 
-//const someDate = 46 * year + 8 * hour + 9;
-//console.log(someDate);
-
 function formatDuration(seconds) {
-    return `${getYears(seconds)},${getDays(seconds)},${getHours(seconds)},${getMin(seconds)},${getSec(seconds)}`;
-
-    // if (seconds === 0) return 'now';
-    // return getHours(seconds);
+    if (seconds === 0) return 'now';
+    let date = `${getYears(seconds)},${getDays(seconds)},${getHours(seconds)},${getMin(seconds)},${getSec(seconds)}`;
+    let arrDate =  date.split(',').filter(el => el !== '');
+    if(arrDate.length === 1){
+        return arrDate[0];
+    } else if(arrDate.length === 2){
+        return arrDate.join(' and ');
+    } else{
+        const last = arrDate.slice(-2).join(' and ');
+        const first = arrDate.slice(0, arrDate.length - 2).join(', ');
+        return `${first}, ${last}`;
+    }
 }
 
-console.log(formatDuration(564859)); 
+console.log(formatDuration(0)); 
 
 //years, days, hours, minutes and second
 
